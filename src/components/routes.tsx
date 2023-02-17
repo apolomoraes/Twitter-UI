@@ -3,7 +3,11 @@ import { Timeline } from "../pages/Timeline";
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/home',
     element: <Timeline />
+  },
+  {
+    path: '/tweet',
+    element: <h1>o</h1>
   },
 ])
