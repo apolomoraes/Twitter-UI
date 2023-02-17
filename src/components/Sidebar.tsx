@@ -1,7 +1,6 @@
 import { House, Hash, Bell, Envelope, BookmarkSimple, FileText, User, DotsThreeCircle, Sparkle } from 'phosphor-react'
 import twitterLogo from '../assets/logo-twitter.svg'
-import './global.css'
-
+import './Sidebar.css'
 
 export function Sidebar() {
   return (
