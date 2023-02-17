@@ -6,7 +6,8 @@
 
 :root {
   --twitter-blue: #1da1f2;
-  --background: #2F2F2F;
+  --background: #0C0C0C;
+  --background-two: #2F2F2F;
   --color-text-tweet: #e1e1e6;
   --color-text-menu: #ffffff;
   --color-text-tweet-placeholder: #828282;
@@ -41,63 +42,84 @@ a {
   grid-template-columns: 300px 1fr;
 }
 
-.sidebar {
-  padding: 1.5rem 1.25rem;
+.content {
+  border-left: 1px solid var(--background-two);
+  border-right: 1px solid var(--background-two);
+}
 
+.timeline-header {
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--background-two);
+}
+
+.timeline-header svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--twitter-blue);
+}
+
+.new-tweet-form {
+  padding: 1.5rem 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 0.5rem;
 }
 
-.sidebar .logo {
-  width: 2rem;
-  height: 2rem;
-}
-
-.sidebar .new-tweet {
-  background: var(--twitter-blue);
-  border-radius: 9999px;
-  padding: 1rem;
+.new-tweet-form label {
   display: flex;
-  justify-content: center;
-  width: 100%;
-  color: #FFF;
+  gap: 0.75rem;
+}
+
+.new-tweet-form label img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+}
+
+.new-tweet-form label textarea {
+  flex: 1;
+  border: 0;
   font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 0.75rem;
+  resize: none;
+
+  background-color: var(--background);
+}
+
+.new-tweet-form label textarea:focus {
+  outline: none;
+}
+
+.new-tweet-form label textarea::placeholder {
+  color: var(--color-text-tweet-placeholder);
+}
+
+.new-tweet-form button[type=submit] {
+  margin-left: auto;
+  background-color: var(--twitter-blue);
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  color: var(--color-text-menu);
+  font-size: 1rem;
   font-weight: 900;
   border: 0;
 
   transition: 300ms;
 }
 
-.sidebar .new-tweet:hover {
+.new-tweet-form button:hover {
   filter: brightness(0.85);
 }
 
-.main-navigation {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.main-navigation a {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.main-navigation a svg {
-  width: 2rem;
-  height: 2rem;
-}
-
-.main-navigation a.active {
-  color: var(--twitter-blue);
-}
-
-.content {
-  border-left: 1px solid var(--color-text-tweet-placeholder);
-  border-right: 1px solid var(--color-text-tweet-placeholder);
+.separator {
+  background-color: #202020;
+  border-top: 1px solid var(--background-two);
+  border-bottom: 1px solid var(--background-two);
+  height: 0.75rem;
 }
