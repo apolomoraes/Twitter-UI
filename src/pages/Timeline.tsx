@@ -1,6 +1,7 @@
 import { Header } from "../components/Header"
 import { Separator } from "../components/Separator"
 import { Tweet } from "../components/Tweet"
+import './Timeline.css'
 
 const tweets = [
   'meu primeiro',
