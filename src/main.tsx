@@ -7,6 +7,8 @@ import { Tweet } from './components/Tweet'
 import { Sidebar } from './components/Sidebar'
 import { Header } from './components/Header'
 import { Separator } from './components/Separator'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './components/routes'
 
 const tweets = [
   'meu primeiro',
@@ -22,6 +24,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <div className='content'>
         <main className='timeline' >
           <Header title="Home" />
+
+          <RouterProvider router={router} />
 
           <form className="new-tweet-form">
             <label htmlFor="tweet">
