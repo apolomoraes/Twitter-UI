@@ -8,6 +8,12 @@ import { Sidebar } from './components/Sidebar'
 import { Header } from './components/Header'
 import { Separator } from './components/Separator'
 
+const tweets = [
+  'meu primeiro',
+  'meu segundo',
+  'meu terceiro'
+]
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='layout'>
@@ -28,10 +34,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 
           <Separator />
 
-          <Tweet />
-          <Tweet />
-          <Tweet />
-          <Tweet />
+          {
+            tweets.map(tweet => {
+              return <Tweet key={tweet} content={tweet} />
+            })
+          }
         </main>
       </div>
     </div>
