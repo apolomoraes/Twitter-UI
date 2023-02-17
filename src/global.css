@@ -1,4 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --twitter-blue: #1da1f2;
+  --background: #2F2F2F;
+  --color-text-tweet: #e1e1e6;
+  --color-text-menu: #ffffff;
+  --color-text-tweet-placeholder: #828282;
+}
+
 body {
-  background: #121214;
-  color: #e1e1e6;
+  background: var(--background);
+  color: var(--color-text-menu);
+  -webkit-font-smoothing: antialiased;
+}
+
+body, input, textarea, button {
+  font: 400 1rem Roboto, sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+.layout {
+  margin: 0 auto;
+  max-width: 62.5rem;
+
+  display: grid;
+  grid-template-columns: 18.75rem 1fr;
+} 
+
+.sidebar {
+  padding: 1.5rem 1.25rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.content {
+  border-left: 1px solid var(--color-text-tweet-placeholder);
+  border-right: 1px solid var(--color-text-tweet-placeholder);
 }
