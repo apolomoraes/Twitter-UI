@@ -25,6 +25,7 @@
   resize: none;
 
   background-color: var(--background);
+  color: var(--color-text-menu);
 }
 
 .new-tweet-form label textarea:focus {
