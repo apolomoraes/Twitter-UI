@@ -16,6 +16,7 @@ export function Timeline() {
     event.preventDefault()
 
     setTweets([newTweet, ...tweets])
+    setNewTweet('')
   }
 
   return (
