@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react"
+import { FormEvent, KeyboardEvent, useState } from "react"
 import { Header } from "../components/Header"
 import { Separator } from "../components/Separator"
 import { Tweet } from "../components/Tweet"
@@ -20,6 +20,12 @@ export function Status() {
     setNewAnswer('')
   }
 
+  function handleHotKeySubmit(event: KeyboardEvent) {
+    if (event.key === 'Enter' && (event.ctrlKey || event.metaKey)) {
+      setAnswers([newAnswer, ...answers])
+      setNewAnswer('')
+    }
+  }
 
   return (
     <main className='status' >
@@ -32,9 +38,14 @@ export function Status() {
       <form onSubmit={createNewAnswer} className="answer-tweet-form">
         <label htmlFor="tweet">
           <img src="https://github.com/apolomoraes.png" alt="Foto de usuário" />
-          <textarea id='tweet' placeholder="Tweet your answer" value={newAnswer} onChange={(event) => {
-            setNewAnswer(event.target.value)
-          }} />
+          <textarea
+            id='tweet'
+            placeholder="Tweet your answer"
+            value={newAnswer}
+            onKeyDown={handleHotKeySubmit}
+            onChange={(event) => {
+              setNewAnswer(event.target.value)
+            }} />
         </label>
 
         <button type='submit'>Answer</button>
